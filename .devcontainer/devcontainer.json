@@ -1,0 +1,26 @@
+{
+  "name": "kakeibo-app",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+
+  "features": {
+    "ghcr.io/devcontainers/features/mysql:1": {
+      "version": "8.0"
+    }
+  },
+
+  "forwardPorts": [8080, 3306],
+
+  "postCreateCommand": "./mvnw clean install",
+  "postStartCommand": "./mvnw spring-boot:run",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-spring-boot-dashboard",
+        "pivotal.vscode-spring-boot"
+      ]
+    }
+  }
+}

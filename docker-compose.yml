@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mysql:8
+    container_name: kakeibo-db
+    environment:
+      MYSQL_DATABASE: kakeibo
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
