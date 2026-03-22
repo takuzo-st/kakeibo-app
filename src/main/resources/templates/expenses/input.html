@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+  【Week 1 Day 3 - 穴埋め課題】支出入力フォーム画面
+
+  Thymeleaf というテンプレートエンジンを使って、
+  Java のオブジェクトと HTML フォームを紐付けます。
+
+  TODO のコメントがある箇所を埋めて完成させてください。
+  ヒントは HINT.md を参照してください。
+-->
+
+<!-- TODO (1): Thymeleaf を使うために xmlns:th 属性を html タグに追加してください -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>支出を入力する</title>
+  <style>
+    body { font-family: sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; }
+    h1 { color: #333; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; margin-bottom: 4px; font-weight: bold; color: #555; }
+    input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    button { background: #4a90e2; color: white; padding: 10px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #357abd; }
+  </style>
+</head>
+<body>
+
+  <h1>支出を入力する</h1>
+
+  <!--
+    TODO (2): フォームタグに以下の2つのThymeleaf属性を追加してください
+      - th:action : フォームの送信先URLを "/expenses" に指定する
+                    Thymeleafでは th:action="@{/expenses}" と書きます
+      - th:object : フォーム全体で使うオブジェクトを "${expense}" に指定する
+  -->
+  <form method="post">
+
+    <div class="form-group">
+      <label>金額（円）</label>
+      <!--
+        TODO (3): th:field を使って amount フィールドと紐付けてください
+                  Thymeleafでは th:field="*{フィールド名}" と書きます
+      -->
+      <input type="number" placeholder="例: 500"/>
+    </div>
+
+    <div class="form-group">
+      <label>カテゴリ</label>
+      <!--
+        TODO (4): th:field を使って category フィールドと紐付けてください
+      -->
+      <input type="text" placeholder="例: 食費"/>
+    </div>
+
+    <div class="form-group">
+      <label>メモ（任意）</label>
+      <!--
+        TODO (5): th:field を使って memo フィールドと紐付けてください
+      -->
+      <input type="text" placeholder="例: コンビニでランチ"/>
+    </div>
+
+    <div class="form-group">
+      <label>支出日</label>
+      <!--
+        TODO (6): th:field を使って expenseDate フィールドと紐付けてください
+      -->
+      <input type="date"/>
+    </div>
+
+    <button type="submit">保存する</button>
+
+  </form>
+
+</body>
+</html>

@@ -132,16 +132,16 @@ Database（MySQL）
 @Controller
 public class ExpenseController {
 
-    // GET /expenses/new → 入力フォーム画面を表示
-    @GetMapping("/expenses/new")
-    public String newExpenseForm(Model model) {
+    // GET /expenses/input → 入力フォーム画面を表示
+    @GetMapping("/expenses/input")
+    public String inputExpenseForm(Model model) {
         model.addAttribute("expense", new Expense());
-        return "expenses/new";   // templates/expenses/new.html を表示
+        return "expenses/input";   // templates/expenses/input.html を表示
     }
 }
 ```
 
-**`src/main/resources/templates/expenses/new.html`**
+**`src/main/resources/templates/expenses/input.html`**
 
 Thymeleaf という HTML テンプレートエンジンを使います。  
 `th:field` で Java のフィールドと HTML の入力欄を紐付けます。
@@ -164,7 +164,7 @@ Thymeleaf という HTML テンプレートエンジンを使います。
 
 ### ✅ Day 3 チェック
 
-- [ ] `http://localhost:8080/expenses/new` を開いてフォームが表示された
+- [ ] `http://localhost:8080/expenses/input` を開いてフォームが表示された
 - [ ] 金額・カテゴリ・メモ・日付の入力欄が表示されている
 - [ ] 「保存」ボタンをクリックしてもエラー画面にならない（Week 2でDB保存を実装）
 
@@ -249,7 +249,7 @@ Spring Boot 3 / Java 17 / H2 Database
 |------|--------|
 | コードの意味がわからない | `HINT.md` を見る → AIに質問する |
 | エラーが消えない | エラー全文をAIに貼って質問する |
-| フォームが表示されない | `http://localhost:8080/expenses/new` のURLを確認する |
+| フォームが表示されない | `http://localhost:8080/expenses/input` のURLを確認する |
 | アプリが起動しない | コンソールの最初のエラーメッセージをAIに質問する |
 
 ---
