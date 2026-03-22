@@ -3,15 +3,15 @@
   "image": "mcr.microsoft.com/devcontainers/java:17",
 
   "features": {
-    "ghcr.io/devcontainers/features/mysql:1": {
-      "version": "8.0"
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false
     }
   },
 
   "forwardPorts": [8080, 3306],
 
-  "postCreateCommand": "./mvnw clean install",
-  "postStartCommand": "./mvnw spring-boot:run",
+  "postCreateCommand": "docker compose up -d && ./mvnw clean install",
+  "postStartCommand": "pkill -f spring-boot || true && ./mvnw spring-boot:run",
 
   "customizations": {
     "vscode": {
