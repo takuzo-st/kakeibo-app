@@ -20,9 +20,9 @@ Spring Bootで作る「実践型ハンズオン教材」です。
 
 ---
 
-## ⚡ クイックスタート（おすすめ）
+## ⚡ クイックスタート
 
-### 👉 方法①：GitHub Codespaces（最も簡単）
+### 👉 方法：GitHub Codespaces
 
 1. 右上の「Code」→「Codespaces」→「Create codespace」
 2. 起動後、以下を実行
@@ -30,3 +30,4 @@ Spring Bootで作る「実践型ハンズオン教材」です。
 ```bash
 docker compose up -d
 ./mvnw spring-boot:run
+```
